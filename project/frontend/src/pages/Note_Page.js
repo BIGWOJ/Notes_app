@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react'
 import {ReactComponent as Arrow_left_icon} from '../assets/arrow_left.svg'
 import {Link} from 'react-router-dom'
 
+
 const Note_Page = () => {
     const {id: note_id} = useParams()
     let [note, set_note] = useState(null)
@@ -22,7 +23,7 @@ const Note_Page = () => {
     }
 
     let create_note = async () => {
-        fetch(`/api/notes/create`, {
+        fetch(`/api/notes/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -32,7 +33,7 @@ const Note_Page = () => {
     }
 
     let update_note = async () => {
-        fetch(`/api/notes/${note_id}/update`, {
+        fetch(`/api/notes/${note_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -42,7 +43,7 @@ const Note_Page = () => {
     }
 
     let delete_note = async () => {
-        fetch(`/api/notes/${note_id}/delete`, {
+        fetch(`/api/notes/${note_id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'

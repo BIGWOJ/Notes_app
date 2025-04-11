@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import List_Item from '../components/List_Item'
 import Add_Button from '../components/Add_Button'
 
+
 const Notes_List_Page = () => {
 
     let [notes, set_notes] = useState([])
